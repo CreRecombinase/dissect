@@ -34,7 +34,7 @@
 #include <memory>
 #include <vector>
 #include <utility>
-#include "genfile/bgen/bgen.hpp"
+#include "bgen.hpp"
 #include "genotype.h"
 #include "communicator.h"
 #include "misc.h"
