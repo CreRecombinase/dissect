@@ -48,7 +48,7 @@
 #include "results.h"
 #include "analysis.h"
 
-Communicator * communicator;
+Communicator* communicator;
 Options options;
 Misc misc;
 
@@ -56,6 +56,19 @@ Misc misc;
 
 int main(int argc, char **argv)//The covariates has to be checked before running this version. This error to avoid compilation.
 {
+
+  // {
+  //   volatile int i = 0;
+  //   char hostname[256];
+  //   gethostname(hostname, sizeof(hostname));
+  //   printf("PID %d on %s ready for attach\n", getpid(), hostname);
+  //   fflush(stdout);
+  //   while (0 == i)
+  //     sleep(5);
+  // }
+
+
+
   int nMaxThreads = omp_get_max_threads();
   
   communicator = new Communicator(argc, argv);

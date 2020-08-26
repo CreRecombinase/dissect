@@ -3,14 +3,14 @@ HDR = include/global.h include/communicator.h include/main.h include/options.h i
 
 # DEP = ${SRC:.cpp=.d}
 
-CXX ?= /opt/intel/compilers_and_libraries_2020.0.166/linux/mpi/intel64/bin/mpiicpc
+CXX = /opt/intel/compilers_and_libraries_2020.0.166/linux/mpi/intel64/bin/mpiicpc
 
-CPPFLAGS ?= -I/run/media/nwknoblauch/Backup412/spack/opt/spack/linux-manjaro19-haswell/gcc-9.3.0/boost-1.72.0-nxjxgnomp5kanuuxgvjjvg4ykxdzkhfz/include -I/run/media/nwknoblauch/Backup412/spack/opt/spack/linux-manjaro19-haswell/gcc-9.3.0/bgen17-master-3notwqaxvpxfmm55dafuwyfk23fwyvxw/include/
-CXXFLAGS += -g -O3 -fopenmp -m64 -DBOOSTLIB -DZLIB -DBGEN -march=native =mtune=native -I./include
+CPPFLAGS = -I/run/media/nwknoblauch/Backup412/spack/opt/spack/linux-manjaro19-haswell/gcc-9.3.0/boost-1.72.0-nxjxgnomp5kanuuxgvjjvg4ykxdzkhfz/include -I/run/media/nwknoblauch/Backup412/spack/opt/spack/linux-manjaro19-haswell/gcc-9.3.0/bgen17-master-3notwqaxvpxfmm55dafuwyfk23fwyvxw/include/
+CXXFLAGS += -g -O3 -fopenmp -m64 -DBOOSTLIB -DZLIB -DBGEN -march=native -mtune=native -I./include
 
-LDFLAGS ?= -L/opt/intel/mkl/lib/intel64
+LDFLAGS = -g -L/opt/intel/mkl/lib/intel64 -L/run/media/nwknoblauch/Backup412/spack/opt/spack/linux-manjaro19-haswell/gcc-9.3.0/bgen17-master-3notwqaxvpxfmm55dafuwyfk23fwyvxw/lib/
 
-LDLIBS ?=  -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_blacs_intelmpi_lp64 -lmkl_core -lmkl_gnu_thread -lboost_iostreams -lbgenlib -lz -lzstd
+LDLIBS =  -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_blacs_intelmpi_lp64 -lmkl_core -lmkl_gnu_thread -lboost_iostreams -lbgenlib -lz -lzstd
 
 LDLIBS += -ldl -lpthread -lm
 
