@@ -24,7 +24,6 @@ SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 find_package(PkgConfig)
 find_package(PkgConfig QUIET)
-find_package(MKL REQUIRED)
 pkg_check_modules(ZSTD REQUIRED IMPORTED_TARGET GLOBAL libzstd)
 
 # FetchContent_Declare(
@@ -93,4 +92,5 @@ find_package(bgen REQUIRED)
 
 target_link_libraries(dissect PUBLIC MPI::MPI_CXX)
 target_link_libraries(dissect PRIVATE bgen17)
-target_link_libraries(dissect PRIVATE mkl::scalapack)
+target_include_directories(dissect PRIVATE SCALAPACK_INCDIR)
+target_link_libraries(dissect PRIVATE SCALAPACK_LIBRARIES)
